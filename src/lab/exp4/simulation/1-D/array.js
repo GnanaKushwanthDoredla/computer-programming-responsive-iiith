@@ -74,9 +74,10 @@ window.view = {
 		for ( i = 0 ; i < inputValue ; i++ ) {
 			var random = Math.floor(Math.random()*15)
 			this.numbers.push(String(random))
-		}
+	}
 	},
 	getUserInput: function() {
+                
 		var inputValue = document.getElementById('userInput').value
 		inputValue = inputValue.replace(/\s/g, ',')
 		this.numbers = inputValue.split(',')
@@ -84,9 +85,9 @@ window.view = {
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
 		if ( element[0].checked )
-			this.generateRandomNumbers()
-		else if (element[1].checked)
-			this.getUserInput()
+			this.generateRandomNumbers()          
+		else if (element[1].checked)			
+                        this.getUserInput()
 	},
 	createBoxes: function() {
 		for ( i = 0 ; i < this.numbers.length ; i++ ) {
