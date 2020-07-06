@@ -19,12 +19,12 @@ window.view = {
 	},
 	getInput: function() {
 		 var input = Number(document.getElementById('input').value)
-			if(input == 0)
-			alert("enter disks first");
-		  else if ( isNaN(input) === true )
+		 if ( input === 0 )
+		 	alert('Enter number of disks first !')
+		 else if ( isNaN(input) === true )
 			alert('Number of disks must be an integer value !')
-		 else if ( input > 10 || input < 0 )
-			alert('Invalid input')
+		 else if ( input > 10 || input % 1 !== 0 )
+			alert('Invali input')
 		 else {
 			this.disableElement('btnOk')
 			this.enableElement('btnStart')
@@ -204,10 +204,10 @@ window.view = {
 			}
 		}
 		else if ( this.lastRedDiv.id === 'line13' ) {
-			if  ( this.totalDisks === 9 && this.clicks === 40 ||
-				( this.totalDisks === 10 && this.clicks === 43 ) ||
-				( this.totalDisks === 10 && ( this.clicks === 79 || this.clicks === 80 ) ) ||
-				( this.totalDisks === 10 && this.clicks === 119 )
+			if  ( this.totalDisks === 4 && this.clicks === 40 ||
+				( this.totalDisks === 5 && this.clicks === 43 ) ||
+				( this.totalDisks === 5 && ( this.clicks === 79 || this.clicks === 80 ) ) ||
+				( this.totalDisks === 5 && this.clicks === 119 )
 				) {
 				this.swapSandT()
 				this.n ++
@@ -290,4 +290,4 @@ window.view = {
 		this.activateEvents()
 	}
 }
-window.onload = function() { view.init() }																										
+window.onload = function() { view.init() }																																																				
